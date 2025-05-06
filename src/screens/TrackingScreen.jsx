@@ -1,14 +1,29 @@
 import React, { useEffect, useState } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import MapView, { Marker } from 'react-native-maps';
+import PropTypes from 'prop-types';
 
-const TrackingScreen = ({ route }) => {
+TrackingScreen.propTypes = {
+  route: PropTypes.shape({
+    params: PropTypes.shape({
+      deliveryId: PropTypes.string.isRequired
+    }).isRequired
+  }).isRequired
+};
+
+export default TrackingScreen = ({ route }) => {
   const { deliveryId } = route.params;
   const [delivery, setDelivery] = useState(null);
   const [riderLocation, setRiderLocation] = useState({
     latitude: -23.5505,
     longitude: -46.6333,
   });
+  const INITIAL_REGION = {
+    latitude: -26.9975,
+  longitude: -48.6325,
+  latitudeDelta: 0.015,
+  longitudeDelta: 0.008
+  };
 
   useEffect(() => {
     // Simulação: buscar dados da entrega
@@ -91,4 +106,3 @@ const styles = StyleSheet.create({
   },
 });
 
-export default TrackingScreen;

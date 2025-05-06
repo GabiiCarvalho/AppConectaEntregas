@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { View, Text, StyleSheet, FlatList, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcon';
 
-const StoreDashboardScreen = ({ navigation }) => {
+export default StoreDashboardScreen = ({ navigation }) => {
     const [orders, setOrders] = useState([]);
     const [activeTab, setSctiveTab] = useState('peding');
 
@@ -167,4 +167,4 @@ const StoreDashboardScreen = ({ navigation }) => {
       },
     });
 
-    export default StoreDashboardScreen;
+    

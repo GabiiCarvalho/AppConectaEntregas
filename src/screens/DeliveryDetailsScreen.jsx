@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, StyleSheet, ScrollView } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
-const DeliveryDetailsScreen = ({ route }) => {
+export default DeliveryDetailsScreen = ({ route }) => {
   const { delivery } = route.params;
 
   return (
@@ -129,4 +129,3 @@ const styles = StyleSheet.create({
   },
 });
 
-export default DeliveryDetailsScreen;

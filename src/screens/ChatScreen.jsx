@@ -3,7 +3,7 @@ import { Viwe, FlatList, TextInput, Button } from 'react-native';
 import firestore from '@react-native-firebase/firestore';
 import { auth } from '../services/firebase';
 
-const ChatScreen = ({ route }) => {
+export default ChatScreen = ({ route }) => {
     const { orderId } = route.params;
     const [messages, setMessages] = useState([]);
     const [newMessage, setNewMessage] = useState('');
@@ -70,5 +70,3 @@ const ChatScreen = ({ route }) => {
         </View>
       );
     };
-
-    export default ChatScreen;

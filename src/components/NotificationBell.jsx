@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, Animated } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
-const NotificationBell = ({ count, onPress }) => {
+export default NotificationBell = ({ count, onPress }) => {
   const [animation] = useState(new Animated.Value(0));
 
   useEffect(() => {

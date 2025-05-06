@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { View, TextInput, Button, StyleSheet, Text } from 'react-native';
 
-const LoginScreen = ({ navigation }) => {
+export default LoginScreen = ({ navigation }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -67,5 +67,3 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
 });
-
-export default LoginScreen;

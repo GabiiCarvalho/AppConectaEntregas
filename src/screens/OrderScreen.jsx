@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, ScrollView } from 'react-native';
 
-const OrderScreen = ({ navigation }) => {
+export default OrderScreen = ({ navigation }) => {
   const [address, setAddress] = useState('');
   const [items, setItems] = useState('');
   const [notes, setNotes] = useState('');
@@ -85,5 +85,3 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
 });
-
-export default OrderScreen;
