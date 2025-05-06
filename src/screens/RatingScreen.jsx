@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
-const RatingScreen = ({ route, navigation }) => {
+export default RatingScreen = ({ route, navigation }) => {
   const { orderId } = route.params;
   const [rating, setRating] = useState(0);
   const [comment, setComment] = useState('');
@@ -122,5 +122,3 @@ const StarRating = ({ rating, onRate, size = 24, editable = true }) => {
     </View>
   );
 };
-
-export default RatingScreen;

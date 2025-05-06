@@ -3,7 +3,7 @@ import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import MapView, { Marker, Polyline } from 'react-native-maps';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
-const RiderScreen = ({ navigation }) => {
+export default RiderScreen = ({ navigation }) => {
   const [activeDelivery, setActiveDelivery] = useState(null);
   const [position, setPosition] = useState({
     latitude: -23.5505,
@@ -189,5 +189,3 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
 });
-
-export default RiderScreen;

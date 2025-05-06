@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
-const LoyaltyProgramScreen = () => {
+export default LoyaltyProgramScreen = () => {
   const [points, setPoints] = useState(0);
   const [level, setLevel] = useState('Bronze');
   const [nextReward, setNextReward] = useState(50);
@@ -137,5 +137,3 @@ const styles = StyleSheet.create({
     flex: 1,
   },
 });
-
-export default LoyaltyProgramScreen;

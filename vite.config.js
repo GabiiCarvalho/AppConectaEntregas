@@ -1,43 +1,44 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+import path from 'path';
 
-// https://vite.dev/config/
 export default defineConfig({
-  plugins: [react(),
-     babel({
-      extensions: ['.js', '.jsx', '.ts', '.tsx'],
-      babelHelpers: 'bundled',
-      presets: ['@babel/prest-react'],
-      plugins: [
-        ['@babel/plugin-transform-flow-strip-types'],
-        ['@babel/plugin-proposal-class-properties']
-      ]
-     })
+  plugins: [react()],
+  resolve: {
+    alias: [
+      {
+        find: 'react-native',
+        replacement: 'react-native-web',
+      },
+      {
+        find: 'react-native-maps',
+        replacement: 'react-native-web-maps',
+      },
+      {
+        find: 'react-native/Libraries/vendor/emitter/EventEmitter',
+        replacement: path.resolve(
+          'node_modules/react-native-web/dist/vendor/react-native/emitter/EventEmitter.js'
+        ),
+      },
+      {
+        find: 'react-native/Libraries/Utilities/binaryToBase64',
+        replacement: path.resolve(
+          'node_modules/react-native-web/dist/vendor/react-native/Utilities/binaryToBase64.js'
+        ),
+      },
+      {
+        find: /^@react-native-firebase\/(.*)/,
+        replacement: path.resolve(`node_modules/@react-native-firebase/$1/web`),
+      },
     ],
-    resolve: {
-      alias: {
-        'react-native': 'react-native-web'
-      }
+  },
+  optimizeDeps: {
+    include: ['react-native-web-maps'],
+    esbuildOptions: {
+      resolveExtensions: ['.web.js', '.js', '.jsx'],
+      loader: {
+        '.js': 'jsx',
+      },
     },
-    optimizeDeps: {
-      esbuildOptions: {
-        loader: {
-          '.js': 'jsx',
-        },
-        resolveExtensions: [
-          'web.js',
-          'web.jsx',
-          'web.ts',
-          'web.tsx',
-          '.js',
-          '.jsx',
-          '.ts',
-          '.tsx'
-        ]
-      }
-    },
-    define: {
-      global: 'window',
-      __DEV__: JSON.stringify(process.env.NODE_ENV !== 'production')
-    }
-})
+  },
+});

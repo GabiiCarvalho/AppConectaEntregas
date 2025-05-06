@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { View, FlatList, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import DeliveryCard from '../components/DeliveryCard';
 
-const HomeScreen = ({ navigation }) => {
+export default HomeScreen = ({ navigation }) => {
   const [deliveries, setDeliveries] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -68,5 +68,3 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
 });
-
-export default HomeScreen;

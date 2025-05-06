@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
-const DeliveryCard = ({ delivery }) => {
+export default DeliveryCard = ({ delivery }) => {
   const getStatusColor = () => {
     switch(delivery.status) {
       case 'preparando': return '#FFA500';
